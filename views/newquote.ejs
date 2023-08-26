@@ -1,0 +1,72 @@
+<%- include('./navbar') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #15202b;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #192734;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0d86c8;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Share Your Quote</h1>
+        <form action="/" method="POST" id="form">
+          <input type="text" placeholder="Author's Name" name="name">
+          <textarea placeholder="Your Quote" name="quote"></textarea>
+          <button type="submit">Share</button>
+        </form>
+      </div>
+</body>
+</html>

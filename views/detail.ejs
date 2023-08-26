@@ -1,0 +1,82 @@
+<%- include('./navbar') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #1da1f2;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+    }
+
+    .navbar-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-links li {
+      margin-left: 20px;
+    }
+
+    .navbar-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .navbar-links a:hover {
+      text-decoration: underline;
+    }
+
+    .quote-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .quote {
+      font-size: 20px;
+      font-style: italic;
+      color: #333;
+    }
+
+    .author {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #777;
+    }
+    </style>
+</head>
+<body>
+    <div class="quote-container">
+        <div class="quote">
+          <q><%= quote.quote %></q>
+        </div>
+        <div class="author">-    <%= quote.name %></div>
+      </div>
+</body>
+</html>

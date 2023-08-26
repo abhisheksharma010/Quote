@@ -1,0 +1,98 @@
+<%- include('./navbar') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+      height: 80vh;
+    }
+
+    .quote-box {
+      display: inline-block;
+      width: 90%;
+      padding: 15px;
+      margin: 10px 10px;
+      background-color: #fef4e5;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .quote {
+      color: #d1ad5c;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .author {
+      color: #a88d5c;
+      font-weight: bold;
+    }
+
+    .quote-controls {
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    .delete-button {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .show-button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      margin:5px ;
+      margin-right: 5px;
+    }
+    </style>
+</head>
+<body>
+    <!-- quote -->
+    <div class="container">
+    <% for (let item of quote){ %>
+      
+            <div class="quote-box">
+              <div class="quote"><%= item.quote %></div>
+              <div class="author"><%= item.name %></div>
+              <div class="quote-controls">
+                <a href="/detail/<%=item._id%>">
+                <button class="show-button">Show</button>
+            </a>
+            <form action="/<%=item._id%>?_method=DELETE" method="POST">
+                <button class="delete-button">Delete</button>
+            </form>
+              </div>
+            </div>
+           
+        <%  } %>
+        <!-- Add more quote boxes as needed -->
+      </div>
+    
+</body>
+</html>
